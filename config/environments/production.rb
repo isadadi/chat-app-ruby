@@ -80,6 +80,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_controller.raise_on_missing_callback_actions = true
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
@@ -87,6 +89,6 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  config.hosts << ENV['DEVELOPMENT_HOSTS']
+  config.hosts << "chat-app-ruby-production.up.railway.app"
   config.secret_key_base = ENV['SECRET_KEY_BASE']
 end
